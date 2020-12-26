@@ -39,9 +39,9 @@ console.log('app.js is running!');
 
 const app =
 {
-    title: "Indecision App",
-    subTitle: "Put your life in the hands of a computer",
-    options: ["One", "Two"]
+    title: 'Indecision App',
+    subTitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
 };
 
 // const length = options.length;
@@ -51,7 +51,7 @@ const template =
         <div>
             <h1>{app.title}</h1>
             {app.subTitle && <p>{app.subTitle}</p>}
-            <p>{(app.options && app.options.length > 0) ? "Here are your options" : "No options"}</p>
+            <p>{(app.options && app.options.length > 0) ? 'Here are your options' : 'No options'}</p>
 
             <ol>
                 <li>Item One</li>
@@ -77,9 +77,9 @@ const template =
 // var roomNumber = 7112;
 
 const user = {
-    name: "Vishnu",
+    name: 'Vishnu',
     age: 30,
-    location: "Hamburg",
+    location: 'Hamburg',
     roomNumber: 7112
 };
 
@@ -98,7 +98,7 @@ function makeBold(value) {
  */
 function getLocation(location) {
     if (location) {
-        return <p>{makeBold("Location")} {location}</p>;
+        return <p>{makeBold('Location')} {location}</p>;
     }
 
     //REVIEW: implicitely returns undefined, no need to mention it explicitly.
@@ -114,10 +114,10 @@ function getLocation(location) {
 const templateTwo =
     (
         <div>
-            <h1>{user.name ? user.name : "Anonymous"}</h1>
-            {(user.age && user.age >= 18) && <p>{makeBold("Age")} {user.age}</p>}
+            <h1>{user.name ? user.name : 'Anonymous'}</h1>
+            {(user.age && user.age >= 18) && <p>{makeBold('Age')} {user.age}</p>}
             {getLocation(user.location)}
-            <p>{makeBold("Room")} {user.roomNumber}</p>
+            <p>{makeBold('Room')} {user.roomNumber}</p>
         </div>
     );
 

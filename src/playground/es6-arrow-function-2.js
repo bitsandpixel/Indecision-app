@@ -1,5 +1,3 @@
-'use strict';
-
 console.log('es6-arrow-function-2 is running');
 
 /**
@@ -8,12 +6,12 @@ console.log('es6-arrow-function-2 is running');
  */
 
 //ES5 function which uses arguments
-var add = function add(num1, num2) {
+const add = function (num1, num2) {
     //prints the passed values to the arguments
     //it also prints even if you passed more values than number of arguments
     console.log(arguments);
     return num1 + num2;
-};
+}
 
 console.log(add(10, 20));
 
@@ -22,26 +20,24 @@ console.log(add(10, 20));
  * @param {int} num1 
  * @param {int} num2 
  */
-var subtract = function subtract(num1, num2) {
+const subtract = (num1, num2) => {
     //argument not defined error would be thrown here.
     //if there is need of accessing arguments, code should be written in ES5.  
     //console.log(arguments); 
     return num1 - num2;
-};
+}
 console.log(subtract(20, 10));
 
 // 2. this keyword is no longer bound with arrow function 
 
 //user object
-var user = {
+const user = {
     name: 'Vishnu',
     cities: ['Hamburg', 'Berlin'],
 
     //ES6 allows us to define to a function without function keyword
     //printPlacesVisited: function () {
-    printPlacesVisited: function printPlacesVisited() {
-        var _this = this;
-
+    printPlacesVisited() {
         //in case of ES5, we need a workaround to access this of user object.
         // const that = this;
         // this.cities.forEach(function (city) {
@@ -51,11 +47,11 @@ var user = {
         //in case of ES6 arrow functions, they are not bind with their
         //own this value, Instead they just use the value of the context
         //they were created in 
-        var citiesMessage = this.cities.forEach(function (city) {
+        const citiesMessage = this.cities.forEach((city) => {
             if (city.match('Hamburg')) {
-                console.log(_this.name + ' is living in ' + city);
+                console.log(this.name + ' is living in ' + city);
             } else {
-                console.log(_this.name + ' has visited ' + city);
+                console.log(this.name + ' has visited ' + city);
             }
         });
         /*
@@ -80,7 +76,7 @@ user.printPlacesVisited();
  * Example code of Array functon map
  */
 
-var user2 = {
+const user2 = {
     name: 'Kiran',
     cities: ['Hyderabad', 'Chennai'],
     states: ['Schiesweg-Holstein', 'Lower Saxony'],
@@ -92,10 +88,8 @@ var user2 = {
     * (here cityMessage)you can even change values of array. 
     * 
      */
-    printCities: function printCities() {
-        var _this2 = this;
-
-        var cityMessage = this.cities.map(function (city) {
+    printCities() {
+        const cityMessage = this.cities.map((city) => {
             /*
             * if (city.match('Hyderabad')) {
             *     return this.name + ' has lived in ' + city;
@@ -103,14 +97,13 @@ var user2 = {
             *      return city
             * }
             */
-            return _this2.name + ' has visited ' + city;
+            return this.name + ' has visited ' + city;
         });
         return cityMessage;
     },
-    printStates: function printStates() {
-        return this.states.map(function (state) {
-            return state + '!';
-        });
+
+    printStates() {
+        return this.states.map((state) => state+'!');
     }
 };
 
