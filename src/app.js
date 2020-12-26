@@ -22,7 +22,7 @@ console.log('app.js is running!');
 // );
 //#endregion
 
-//Ueb_02
+//Task_02
 //Create app object with two values - title and subtitle (what is strict)
 //use Title, subtitle
 //render template
@@ -33,7 +33,7 @@ console.log('app.js is running!');
 //ternary operators
 //logical and operator
 
-//ueb_03
+//Task_03
 //only render the subtitle(and p tag) if subtitle exist - logical and operator
 //render new p tag - if options.length > 0 "Here are your options" , "No options" (below subtitle)
 
@@ -62,7 +62,7 @@ const template =
 
 
 
-//Ueb_01
+//Task_01
 //Create a new templateTwo var JSX expression
 //div
 //h1 -> my name
