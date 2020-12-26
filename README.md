@@ -132,15 +132,6 @@ Install the tools in the exact order to avoid the problems further down the line
     To install all dependencies mentioned in package.json using yarn
         yarn install
 ```
-
-* #### Version
-```
-        node -v (Node)
-        npm -v (npm)
-        yarn --version (yarn)
-        live-server -v (live-server)
-        babel --version (babel)
-```
 * #### Functionality
 ```
     To activate live-server on public folder inside indecision-app folder
@@ -160,6 +151,14 @@ Install the tools in the exact order to avoid the problems further down the line
 
     To compile an input file to an output file using babel 
         babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+```
+* #### Version
+```
+        node -v (Node)
+        npm -v (npm)
+        yarn --version (yarn)
+        live-server -v (live-server)
+        babel --version (babel)
 ```
 
 
