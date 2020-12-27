@@ -117,3 +117,25 @@ var user2 = {
 console.log(user2.cities);
 console.log(user2.printCities());
 console.log(user2.printStates());
+
+//Challenge_01
+/*
+* multiplier object
+* numberss - array of numbers
+* multiply by - single number
+* multiply - return a new array where the numbers have been multiplied.     
+*/
+
+var multiplier = {
+    numbers: [1, 2, 3],
+    multiplyBy: 5,
+    multiply: function multiply() {
+        var _this3 = this;
+
+        return this.numbers.map(function (number) {
+            return number * _this3.multiplyBy;
+        });
+    }
+};
+
+console.log(multiplier.multiply());

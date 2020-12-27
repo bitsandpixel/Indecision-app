@@ -103,10 +103,29 @@ const user2 = {
     },
 
     printStates() {
-        return this.states.map((state) => state+'!');
+        return this.states.map((state) => state + '!');
     }
 };
 
 console.log(user2.cities);
 console.log(user2.printCities());
 console.log(user2.printStates());
+
+
+//Challenge_01
+/*
+* multiplier object
+* numberss - array of numbers
+* multiply by - single number
+* multiply - return a new array where the numbers have been multiplied.     
+*/
+
+const multiplier = {
+    numbers: [1, 2, 3],
+    multiplyBy: 5,
+    multiply() {
+        return this.numbers.map((number) => number * this.multiplyBy);
+    }
+};
+
+console.log(multiplier.multiply())
