@@ -1,5 +1,8 @@
 console.log('app.js is running!');
 
+/**
+ * an object consists of title, subtitle and an array of options
+ */
 const app =
 {
     title: 'Indecision App',
@@ -7,6 +10,10 @@ const app =
     options: []
 };
 
+/**
+ * a function to add a new element to options array.
+ * @param {*} e 
+ */
 const onFormSubmit = (e) => {
     e.preventDefault();
 
@@ -18,12 +25,18 @@ const onFormSubmit = (e) => {
     }
 };
 
+/**
+ * a function to choose a random option among elements of options array.
+ */
 const onMakeDecision = () => {
     const randomNum = Math.floor(Math.random() * app.options.length);
     const option = app.options[randomNum];
     alert(option);
 };
 
+/**
+ * a function to remove all the elements from the options array.
+ */
 const oneRemoveAll = () => {
     if (app.options.length > 0) {
         app.options = [];
@@ -33,6 +46,9 @@ const oneRemoveAll = () => {
 
 const appRoot = document.getElementById('app');
 
+/**
+ * a function to render the indecision app.
+ */
 const renderApp = () => {
     const template =
         (
