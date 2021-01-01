@@ -1,108 +1,34 @@
 'use strict';
 
-console.log('app.js is running!');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/**
- * an object consists of title, subtitle and an array of options
- */
-var app = {
-    title: 'Indecision App',
-    subTitle: 'Put your life in the hands of a computer',
-    options: []
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * a function to add a new element to options array.
- * @param {*} e 
- */
-var onFormSubmit = function onFormSubmit(e) {
-    e.preventDefault();
+var Person = function () {
+    function Person() {
+        var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
 
-    var option = e.target.elements.option.value;
-    if (option) {
-        app.options.push(option);
-        e.target.elements.option.value = '';
-        renderApp();
+        _classCallCheck(this, Person);
+
+        this.name = name || 'test';
     }
-};
 
-/**
- * a function to choose a random option among elements of options array.
- */
-var onMakeDecision = function onMakeDecision() {
-    var randomNum = Math.floor(Math.random() * app.options.length);
-    var option = app.options[randomNum];
-    alert(option);
-};
+    _createClass(Person, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            // return 'Hello ' + this.name;
+            /*
+            * ES6 Template Strings
+            */
+            return 'Hello ' + this.name + '!';
+        }
+    }]);
 
-/**
- * a function to remove all the elements from the options array.
- */
-var oneRemoveAll = function oneRemoveAll() {
-    if (app.options.length > 0) {
-        app.options = [];
-        renderApp();
-    }
-};
+    return Person;
+}();
 
-var appRoot = document.getElementById('app');
+var me = new Person('Vishnu Kandanelly');
+console.log(me.getGreeting());
 
-/**
- * a function to render the indecision app.
- */
-var renderApp = function renderApp() {
-    var template = React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'h1',
-            null,
-            app.title
-        ),
-        app.subTitle && React.createElement(
-            'p',
-            null,
-            app.subTitle
-        ),
-        React.createElement(
-            'p',
-            null,
-            app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
-        ),
-        React.createElement(
-            'button',
-            { disabled: app.options.length == 0, onClick: onMakeDecision },
-            'What should I do?'
-        ),
-        React.createElement(
-            'button',
-            { onClick: oneRemoveAll },
-            'Remove All'
-        ),
-        React.createElement(
-            'ol',
-            null,
-            app.options.map(function (option) {
-                return React.createElement(
-                    'li',
-                    { key: option },
-                    option
-                );
-            })
-        ),
-        React.createElement(
-            'form',
-            { onSubmit: onFormSubmit },
-            React.createElement('input', { type: 'text', name: 'option' }),
-            React.createElement(
-                'button',
-                null,
-                'Add option'
-            )
-        )
-    );
-
-    ReactDOM.render(template, appRoot);
-};
-
-renderApp();
+var other = new Person();
+console.log(other.getGreeting());
