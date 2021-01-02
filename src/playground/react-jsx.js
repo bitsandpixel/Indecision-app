@@ -156,3 +156,4 @@ const renderCounterApp = () => {
 };
 
 renderCounterApp();
+
