@@ -122,38 +122,3 @@ const templateTwo =
     );
 
 //<button id='my-id' className='button'>+1</button>
-let count = 0;
-const addOne = () => {
-    count++;
-    renderCounterApp();
-};
-const subtractOne = () => {
-        count--;
-    renderCounterApp();
-};
-const reset = () => {
-    count = 0;
-    renderCounterApp();
-};
-
-const appRoot = document.getElementById('app');
-// const appRoot2 = document.getElementById('app2');
-
-// ReactDOM.render(template, appRoot);
-// ReactDOM.render(templateTwo, appRoot2);
-
-const renderCounterApp = () => {
-    const templateThree = (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={subtractOne}>-1</button>
-            <button onClick={reset}>reset</button>
-        </div>
-    );
-
-    ReactDOM.render(templateThree, appRoot);
-};
-
-renderCounterApp();
-
