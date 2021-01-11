@@ -267,4 +267,35 @@ var AddOption = function (_React$Component6) {
     return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+//Stateless functional component
+
+var User = function User() {
+    //functional component(function) is similar to class component render function
+    return React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'p',
+            null,
+            'Name:'
+        ),
+        React.createElement(
+            'p',
+            null,
+            'Age:'
+        )
+    );
+};
+
+// const getFirstName = (fullName) =>{
+//     return(
+//         <div>
+//         <p>User: </p>
+//         </div>
+//     );
+//     // return fullName.split(' ')[0];
+// }
+
+// console.log('First name: ' +getFirstName('Vishnu Kiran'));
+
+ReactDOM.render(React.createElement(User, null), document.getElementById('app'));

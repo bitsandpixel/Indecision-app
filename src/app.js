@@ -156,6 +156,28 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+//Stateless functional component
+
+const User = () => { //functional component(function) is similar to class component render function
+    return (
+        <div>
+            <p>Name:</p>
+            <p>Age:</p>
+        </div>
+    );
+}
+
+// const getFirstName = (fullName) =>{
+//     return(
+//         <div>
+//         <p>User: </p>
+//         </div>
+//     );
+//     // return fullName.split(' ')[0];
+// }
+
+// console.log('First name: ' +getFirstName('Vishnu Kiran'));
+
+ReactDOM.render(<User />, document.getElementById('app'));
 
 
