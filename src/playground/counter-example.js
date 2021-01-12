@@ -35,6 +35,7 @@
 
 //---------------------------------- Counter example using react component ------------------------------------------
 
+//passing the default props value
 
 class Counter extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class Counter extends React.Component {
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: 0
+            count: props.count
         };
     }
     render() {
@@ -82,4 +83,9 @@ class Counter extends React.Component {
     }
 }
 
-ReactDOM.render(<Counter />, document.getElementById('app'));
+Counter.defaultProps = {
+    count: 0
+};
+
+
+ReactDOM.render(<Counter count={2}/>, document.getElementById('app'));
